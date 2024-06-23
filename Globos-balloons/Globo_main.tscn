@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://ccqgu4j78cq6y"]
+
+[ext_resource type="Script" path="res://Globos-balloons/BalloonScript.gd" id="1_p04qn"]
+[ext_resource type="Material" uid="uid://bmb0napctfs2w" path="res://Globos-balloons/Material_balloon.tres" id="2_26hix"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_tgaw3"]
+radius = 0.500121
+
+[sub_resource type="SphereMesh" id="SphereMesh_sscta"]
+material = ExtResource("2_26hix")
+
+[node name="Area3D" type="Area3D"]
+script = ExtResource("1_p04qn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_tgaw3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = ExtResource("2_26hix")
+mesh = SubResource("SphereMesh_sscta")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

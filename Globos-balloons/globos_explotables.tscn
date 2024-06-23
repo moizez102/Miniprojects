@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://cusxvc516b57n"]
+
+[ext_resource type="PackedScene" uid="uid://ccqgu4j78cq6y" path="res://Globos-balloons/Globo_main.tscn" id="1_okow3"]
+[ext_resource type="Script" path="res://Globos-balloons/globos_explotables.gd" id="1_q8150"]
+
+[node name="Globos_explotables" type="Node3D"]
+script = ExtResource("1_q8150")
+
+[node name="Area3D" parent="." instance=ExtResource("1_okow3")]
+
+[node name="Area3D2" parent="." instance=ExtResource("1_okow3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+
+[node name="Area3D3" parent="." instance=ExtResource("1_okow3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="Area3D4" parent="." instance=ExtResource("1_okow3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.61631, 3)
+projection = 1
+size = 4.809
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0165862, 2.86702, 2)
+light_energy = 6.818
+omni_range = 8.88304
+
+[node name="Label" type="Label" parent="."]
+offset_right = 186.0
+offset_bottom = 69.0
+theme_override_font_sizes/font_size = 50
+text = "Score: 0"
